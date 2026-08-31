@@ -1,0 +1,23 @@
+{
+  "files": {
+    "prefixes.json.gz": "f37e31fcae6e9f0e393a93641058d8cc7214a42008db5d660af07251fc1792a1",
+    "requests.jsonl.gz": "9035600a98dd5cbf9d7ec8f5b883acbd23a556d75c5ae583ec650edef137a060"
+  },
+  "prefix_groups": 0,
+  "request_count": 3845,
+  "schema_version": 1,
+  "seed": 2026082591,
+  "token_pool_sha256": "ce4f399045a72c5302d50e93e59a4e8c974e62acefd2b810e2d84c58c3728864",
+  "trace_id": "1562fb509094d71b80d4617290ce92a9776cf4426fd8b081d640fe9cc3d21c7a",
+  "traffic": {
+    "duration": 90.0,
+    "mode": "poisson",
+    "rate": 42.36154618436382
+  },
+  "workload": {
+    "input_tokens": 512,
+    "name": "BAL",
+    "output_tokens": 128,
+    "prefix_tokens": 0
+  }
+}

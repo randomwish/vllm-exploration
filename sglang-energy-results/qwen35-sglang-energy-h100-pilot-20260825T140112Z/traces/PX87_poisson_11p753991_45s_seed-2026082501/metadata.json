@@ -1,0 +1,23 @@
+{
+  "files": {
+    "prefixes.json.gz": "4b12d30731642925e94a586ace84844b49edad36b5eeecfccc854d357cc03ab4",
+    "requests.jsonl.gz": "cbf6b36527159f87cc77355641d4a5159ff547cb673454860b180393a9268b02"
+  },
+  "prefix_groups": 16,
+  "request_count": 544,
+  "schema_version": 1,
+  "seed": 2026082501,
+  "token_pool_sha256": "ce4f399045a72c5302d50e93e59a4e8c974e62acefd2b810e2d84c58c3728864",
+  "trace_id": "b99620f271e1586eb518590522715d8e377a9d7be4729ccc240587ae912c54ef",
+  "traffic": {
+    "duration": 45.0,
+    "mode": "poisson",
+    "rate": 11.753991419807218
+  },
+  "workload": {
+    "input_tokens": 4096,
+    "name": "PX87",
+    "output_tokens": 128,
+    "prefix_tokens": 3584
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "gpu_id": "NVIDIA H100 80GB HBM3",
+  "per_gpu_hourly_usd": 3.29,
+  "two_gpu_hourly_usd": 6.58,
+  "hard_limit_gpu_usd": 21.714,
+  "balance_usd": 28.4669086333,
+  "balance_reserve_usd": 6.752908633300002
+}

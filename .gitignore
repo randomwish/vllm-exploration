@@ -5,3 +5,4 @@ __pycache__/
 
 # Local vLLM source checkout
 vllm_source/
+sglang-energy-results.tgz

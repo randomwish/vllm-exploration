@@ -1,0 +1,10 @@
+{
+  "clientBalance": 28.4669086333,
+  "currentSpendPerHr": 0.015,
+  "email": "hanzhe100100@gmail.com",
+  "id": "user_2ZzOUte0Jgm0KIaZHvHLerCDx0F",
+  "notifyLowBalance": false,
+  "notifyPodsGeneral": true,
+  "notifyPodsStale": true,
+  "spendLimit": 80
+}

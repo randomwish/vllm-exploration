@@ -1,0 +1,9 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+{
+  "deleted": false,
+  "finalized": true
+}
+{
+  "pod_id": "mf0e5u3g0zha5t",
+  "stdout": "{\n  \"deleted\": true,\n  \"id\": \"mf0e5u3g0zha5t\"\n}"
+}

@@ -1,5 +1,8 @@
 # GPU deployment checklist
 
+This is the short operational checklist. See [`README.md`](README.md) for SSH
+reconnection, PEP 668 recovery, dependency-install shortcuts, and troubleshooting.
+
 ## RunPod selection
 
 - RunPod → Community Cloud → 1× RTX 4090 → On-Demand.
@@ -20,9 +23,13 @@ On the pod:
 cd /workspace
 git clone https://github.com/randomwish/vllm-exploration.git
 cd vllm-exploration
+export UV_CACHE_DIR=/workspace/uv-cache
 bash setup.sh
 source vllm_source/.venv/bin/activate
+export PATH="$HOME/.local/bin:$PATH"
 export HF_HOME=/workspace/huggingface-cache
+
+uv pip check
 
 python - <<'PY'
 import torch

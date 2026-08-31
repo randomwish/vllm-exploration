@@ -1,0 +1,22 @@
+{
+  "files": {
+    "prefixes.json.gz": "f37e31fcae6e9f0e393a93641058d8cc7214a42008db5d660af07251fc1792a1",
+    "requests.jsonl.gz": "3460076f7d3acf3ca930e04e0b66af1ae721575403301f98435ed89f87da3323"
+  },
+  "prefix_groups": 0,
+  "request_count": 64,
+  "schema_version": 1,
+  "seed": 2026082501,
+  "token_pool_sha256": "ce4f399045a72c5302d50e93e59a4e8c974e62acefd2b810e2d84c58c3728864",
+  "trace_id": "8a517f6a32ecb57b0f4863eb3d08c1f40df9770b5a1109aab877beca95079529",
+  "traffic": {
+    "count": 64,
+    "mode": "closed-loop"
+  },
+  "workload": {
+    "input_tokens": 8192,
+    "name": "PF",
+    "output_tokens": 128,
+    "prefix_tokens": 0
+  }
+}

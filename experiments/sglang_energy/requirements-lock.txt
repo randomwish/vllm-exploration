@@ -1,0 +1,4 @@
+# The SGLang container supplies CUDA, PyTorch, SGLang, aiohttp, and transformers.
+# Install the harness itself with: python -m pip install -e .
+nvidia-ml-py==13.580.82
+

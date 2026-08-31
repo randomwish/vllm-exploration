@@ -1,0 +1,10 @@
+{
+  "cohort_end_s": 46.40881644189358,
+  "elapsed_s": 46.429690880700946,
+  "max_concurrency": null,
+  "request_count": 548,
+  "run_start_unix_s": 1787669897.578751,
+  "success_count": 548,
+  "trace_id": "43421f2a8f6eb04ce9046883ccdd39235bd603a68c4af3100af5a8a2a637c5c1",
+  "watchdog_hit": false
+}

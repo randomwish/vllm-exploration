@@ -1,0 +1,86 @@
+{"kind":"deck","id":"pr/h7yjv6","name":"Deck"}
+{"kind":"layout","layoutId":"e1bd3ed6-c08d-425c-b5db-f1f0d0540c04","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"37fed7cc-1516-460a-83ca-cc9a2d5ee730","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/5zggzy","slide":1,"title":"SGLANG ENERGY-TO-FINISH","textShapes":4}
+{"kind":"textbox","id":"sh/ep0beh4v","slide":1,"name":"eyebrow","text":"SGLANG ENERGY-TO-FINISH","textPreview":"SGLANG ENERGY-TO-FINISH","textChars":23,"textLines":1,"bbox":[42,42,650,40]}
+{"kind":"textbox","id":"sh/1srapwnm","slide":1,"name":"cover-title","text":"Can prefix reuse\nreduce inference energy?","textPreview":"Can prefix reuse | reduce inference energy?","textChars":41,"textLines":2,"bbox":[42,176,1060,250]}
+{"kind":"textbox","id":"sh/0ritgrm1","slide":1,"name":"cover-subtitle","text":"H100 pilot evidence, telemetry relationships, and a paired confirmation design","textPreview":"H100 pilot evidence, telemetry relationships, and a paired confirmation design","textChars":78,"textLines":1,"bbox":[42,500,880,92]}
+{"kind":"textbox","id":"sh/r2psjm54","slide":1,"name":"cover-meta","text":"56 cells · 204 telemetry fields · 38 valid","textPreview":"56 cells · 204 telemetry fields · 38 valid","textChars":42,"textLines":1,"bbox":[42,624,700,32]}
+{"kind":"notes","id":"nt/5zggzy","slide":1,"text":"[Sources]\n- /home/randomwish/dev/vllm-exploration/experiments/sglang_energy/PREFIX-CACHE-EXPERIMENT.md"}
+{"kind":"slide","id":"sl/oyyx6g","slide":2,"title":"Energy falls before the saturation knee; TTFT does not","textShapes":7}
+{"kind":"textbox","id":"sh/s7294jq5","slide":2,"name":"slide-title","text":"Energy falls before the saturation knee; TTFT does not","textPreview":"Energy falls before the saturation knee; TTFT does not","textChars":54,"textLines":1,"bbox":[42,32,1196,72]}
+{"kind":"shape","id":"sh/q5kr298z","slide":2,"name":"knee-callout","bbox":[820,158,380,196]}
+{"kind":"textbox","id":"sh/54rqto7e","slide":2,"name":"knee-stat","text":"85%","textPreview":"85%","textChars":3,"textLines":1,"bbox":[850,182,300,70]}
+{"kind":"textbox","id":"sh/43i90jqt","slide":2,"name":"knee-copy","text":"Selected knee\n27.7 J/request\np95 TTFT 922 ms","textPreview":"Selected knee | 27.7 J/request | p95 TTFT 922 ms","textChars":44,"textLines":3,"bbox":[850,258,300,82]}
+{"kind":"textbox","id":"sh/3298rep8","slide":2,"name":"knee-interpretation","text":"At 95% load, energy improves only 5.4% more while p95 TTFT rises another 81%. Queueing—not GPU failure—sets the useful boundary.","textPreview":"At 95% load, energy improves only 5.4% more while p95 TTFT rises another 81%. Queueing—not GPU failure—sets the useful boundary.","textChars":128,"textLines":1,"bbox":[820,405,380,176]}
+{"kind":"textbox","id":"sh/ih0ry98n","slide":2,"name":"invalid-note","text":"105% cell excluded: telemetry gap","textPreview":"105% cell excluded: telemetry gap","textChars":33,"textLines":1,"bbox":[820,605,380,30]}
+{"kind":"textbox","id":"sh/hgrqp472","slide":2,"name":"footer-note","text":"H100 pilot · Qwen3.5-35B-A3B · TP=2","textPreview":"H100 pilot · Qwen3.5-35B-A3B · TP=2","textChars":35,"textLines":1,"bbox":[42,672,900,22]}
+{"kind":"textbox","id":"sh/gfipwzqx","slide":2,"name":"slide-number","text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[1170,672,68,22]}
+{"kind":"chart","id":"ch/jy98zyp0","slide":2,"name":"","chartType":"line","bbox":[42,145,720,500]}
+{"kind":"notes","id":"nt/oyyx6g","slide":2,"text":"[Sources]\n- /home/randomwish/dev/vllm-exploration/sglang-energy-results/qwen35-sglang-energy-h100-pilot-20260825T140112Z/summary.csv\n- /home/randomwish/dev/vllm-exploration/experiments/sglang_energy/PREFIX-CACHE-EXPERIMENT.md"}
+{"kind":"slide","id":"sl/3e2ijm","slide":3,"title":"The prefix-cache signal grows with reusable context","textShapes":7}
+{"kind":"textbox","id":"sh/ixobihw7","slide":3,"name":"slide-title","text":"The prefix-cache signal grows with reusable context","textPreview":"The prefix-cache signal grows with reusable context","textChars":51,"textLines":1,"bbox":[42,32,1196,72]}
+{"kind":"shape","id":"sh/kz6tkred","slide":3,"name":"energy-stat","bbox":[825,165,360,180]}
+{"kind":"textbox","id":"sh/vudcn2xw","slide":3,"name":"energy-value","text":"−33.5%","textPreview":"−33.5%","textChars":6,"textLines":1,"bbox":[852,187,300,72]}
+{"kind":"textbox","id":"sh/a94buxwb","slide":3,"name":"energy-label","text":"PX87 energy/request","textPreview":"PX87 energy/request","textChars":19,"textLines":1,"bbox":[852,274,300,38]}
+{"kind":"textbox","id":"sh/xwfupcvm","slide":3,"name":"latency-value","text":"−79% p95 TTFT\n−71% p95 E2E","textPreview":"−79% p95 TTFT | −71% p95 E2E","textChars":26,"textLines":2,"bbox":[825,394,360,102]}
+{"kind":"textbox","id":"sh/wv6tw7e1","slide":3,"name":"prefix-caveat","text":"Descriptive means only: both PX87 cache-on confirmation cells failed the telemetry-gap gate.","textPreview":"Descriptive means only: both PX87 cache-on confirmation cells failed the telemetry-gap gate.","textChars":92,"textLines":1,"bbox":[825,540,360,92]}
+{"kind":"textbox","id":"sh/fqhcz6d0","slide":3,"name":"footer-note","text":"H100 pilot · Qwen3.5-35B-A3B · TP=2","textPreview":"H100 pilot · Qwen3.5-35B-A3B · TP=2","textChars":35,"textLines":1,"bbox":[42,672,900,22]}
+{"kind":"textbox","id":"sh/ep8vq1wf","slide":3,"name":"slide-number","text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[1170,672,68,22]}
+{"kind":"chart","id":"ch/d4bm9s36","slide":3,"name":"","chartType":"bar","bbox":[42,145,735,500]}
+{"kind":"notes","id":"nt/3e2ijm","slide":3,"text":"[Sources]\n- /home/randomwish/dev/vllm-exploration/experiments/sglang_energy/PREFIX-CACHE-EXPERIMENT.md\n- /home/randomwish/dev/vllm-exploration/sglang-energy-results/qwen35-sglang-energy-h100-pilot-20260825T140112Z/analysis/telemetry-run-aggregates.csv"}
+{"kind":"slide","id":"sl/sqlz84","slide":4,"title":"The mechanism looks like avoided tensor and DRAM work","textShapes":7}
+{"kind":"textbox","id":"sh/0fypo7id","slide":4,"name":"slide-title","text":"The mechanism looks like avoided tensor and DRAM work","textPreview":"The mechanism looks like avoided tensor and DRAM work","textChars":53,"textLines":1,"bbox":[42,32,1196,72]}
+{"kind":"textbox","id":"sh/edw7mhkn","slide":4,"name":"mechanism-lead","text":"At the same ≈12.3 req/s, PX87 cache-on used:","textPreview":"At the same ≈12.3 req/s, PX87 cache-on used:","textChars":44,"textLines":1,"bbox":[825,174,365,72]}
+{"kind":"textbox","id":"sh/94761wja","slide":4,"name":"tensor-stat","text":"65% less\ntensor activity","textPreview":"65% less | tensor activity","textChars":24,"textLines":2,"bbox":[825,275,365,100]}
+{"kind":"textbox","id":"sh/o3ypsrip","slide":4,"name":"dram-stat","text":"18% less\nDRAM activity","textPreview":"18% less | DRAM activity","textChars":22,"textLines":2,"bbox":[825,414,365,100]}
+{"kind":"textbox","id":"sh/nipozm14","slide":4,"name":"hit-stat","text":"Observed cache-hit rate: 0.642","textPreview":"Observed cache-hit rate: 0.642","textChars":30,"textLines":1,"bbox":[825,570,365,40]}
+{"kind":"textbox","id":"sh/mhg7qh0j","slide":4,"name":"footer-note","text":"H100 pilot · Qwen3.5-35B-A3B · TP=2","textPreview":"H100 pilot · Qwen3.5-35B-A3B · TP=2","textChars":35,"textLines":1,"bbox":[42,672,900,22]}
+{"kind":"textbox","id":"sh/x8rq5wj6","slide":4,"name":"slide-number","text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[1170,672,68,22]}
+{"kind":"chart","id":"ch/fmdwzu9s","slide":4,"name":"","chartType":"bar","bbox":[42,145,735,500]}
+{"kind":"notes","id":"nt/sqlz84","slide":4,"text":"[Sources]\n- /home/randomwish/dev/vllm-exploration/sglang-energy-results/qwen35-sglang-energy-h100-pilot-20260825T140112Z/analysis/telemetry-run-aggregates.csv\n- /home/randomwish/dev/vllm-exploration/experiments/sglang_energy/PREFIX-CACHE-EXPERIMENT.md"}
+{"kind":"slide","id":"sl/a088nh","slide":5,"title":"USE telemetry separates utilization, saturation, and errors","textShapes":4}
+{"kind":"textbox","id":"sh/vmp8relw","slide":5,"name":"slide-title","text":"USE telemetry separates utilization, saturation, and errors","textPreview":"USE telemetry separates utilization, saturation, and errors","textChars":59,"textLines":1,"bbox":[42,32,1196,72]}
+{"kind":"textbox","id":"sh/wny90j2h","slide":5,"name":"use-subtitle","text":"The next experiment keeps every error counter as an exclusion gate, not an explanatory feature.","textPreview":"The next experiment keeps every error counter as an exclusion gate, not an explanatory feature.","textChars":95,"textLines":1,"bbox":[42,105,1120,52]}
+{"kind":"textbox","id":"sh/i9gr2tk7","slide":5,"name":"footer-note","text":"All 56 cells retained · 204 aggregate telemetry fields","textPreview":"All 56 cells retained · 204 aggregate telemetry fields","textChars":54,"textLines":1,"bbox":[42,672,900,22]}
+{"kind":"textbox","id":"sh/ja9sve1s","slide":5,"name":"slide-number","text":"5","textPreview":"5","textChars":1,"textLines":1,"bbox":[1170,672,68,22]}
+{"kind":"table","id":"tb/sr61sbu1","slide":5,"name":"","rows":6,"cols":4,"preview":"Resource | Utilization | Saturation | Errors / next direction","bbox":[42,175,1196,452]}
+{"kind":"notes","id":"nt/a088nh","slide":5,"text":"[Sources]\n- /home/randomwish/dev/vllm-exploration/experiments/sglang_energy/PREFIX-CACHE-EXPERIMENT.md\n- /home/randomwish/dev/vllm-exploration/sglang-energy-results/qwen35-sglang-energy-h100-pilot-20260825T140112Z/analysis/telemetry-availability.csv"}
+{"kind":"slide","id":"sl/41xbr2","slide":6,"title":"Queue explains latency; cache hit tracks lower work","textShapes":8}
+{"kind":"textbox","id":"sh/lofi50re","slide":6,"name":"slide-title","text":"Queue explains latency; cache hit tracks lower work","textPreview":"Queue explains latency; cache hit tracks lower work","textChars":51,"textLines":1,"bbox":[42,32,1196,72]}
+{"kind":"shape","id":"sh/z2xg3a9o","slide":6,"name":"relationship-note","bbox":[930,166,268,190]}
+{"kind":"textbox","id":"sh/8rqh0fq5","slide":6,"name":"relationship-n","text":"n = 19","textPreview":"n = 19","textChars":6,"textLines":1,"bbox":[956,190,220,54]}
+{"kind":"textbox","id":"sh/9szi9krq","slide":6,"name":"relationship-bal","text":"Balanced-load\nrelationships","textPreview":"Balanced-load | relationships","textChars":27,"textLines":2,"bbox":[956,262,220,70]}
+{"kind":"shape","id":"sh/mpozy58z","slide":6,"name":"relationship-note2","bbox":[930,388,268,190]}
+{"kind":"textbox","id":"sh/7qx07a9k","slide":6,"name":"relationship-n2","text":"n = 9","textPreview":"n = 9","textChars":5,"textLines":1,"bbox":[956,412,220,54]}
+{"kind":"textbox","id":"sh/wvqh4zq1","slide":6,"name":"relationship-prefix","text":"Prefix-valid\nrelationships","textPreview":"Prefix-valid | relationships","textChars":26,"textLines":2,"bbox":[956,484,220,70]}
+{"kind":"textbox","id":"sh/hwzidkrm","slide":6,"name":"correlation-caveat","text":"Association, not causality","textPreview":"Association, not causality","textChars":26,"textLines":1,"bbox":[930,600,268,30]}
+{"kind":"textbox","id":"sh/xwz29kz6","slide":6,"name":"footer-note","text":"H100 pilot · Qwen3.5-35B-A3B · TP=2","textPreview":"H100 pilot · Qwen3.5-35B-A3B · TP=2","textChars":35,"textLines":1,"bbox":[42,672,900,22]}
+{"kind":"textbox","id":"sh/wbq10fy1","slide":6,"name":"slide-number","text":"6","textPreview":"6","textChars":1,"textLines":1,"bbox":[1170,672,68,22]}
+{"kind":"chart","id":"ch/2lczmlkn","slide":6,"name":"","chartType":"bar","bbox":[74,150,820,475]}
+{"kind":"notes","id":"nt/41xbr2","slide":6,"text":"[Sources]\n- /home/randomwish/dev/vllm-exploration/sglang-energy-results/qwen35-sglang-energy-h100-pilot-20260825T140112Z/analysis/selected-relationships.csv"}
+{"kind":"slide","id":"sl/3yla5g","slide":7,"title":"The next run isolates the cache effect in three moves","textShapes":13}
+{"kind":"textbox","id":"sh/vml0rq58","slide":7,"name":"slide-title","text":"The next run isolates the cache effect in three moves","textPreview":"The next run isolates the cache effect in three moves","textChars":53,"textLines":1,"bbox":[42,32,1196,72]}
+{"kind":"shape","id":"sh/wnu10v6t","slide":7,"name":"timeline-rule","bbox":[48,350,1180,0]}
+{"kind":"shape","id":"sh/h83it0ny","slide":7,"name":"timeline-node-1","bbox":[70,341,18,18]}
+{"kind":"textbox","id":"sh/mhszu1ob","slide":7,"name":"timeline-label-1","text":"1 · PRIME","textPreview":"1 · PRIME","textChars":9,"textLines":1,"bbox":[70,286,230,34]}
+{"kind":"textbox","id":"sh/7il0n65w","slide":7,"name":"timeline-head-1","text":"Warm 16 prefixes","textPreview":"Warm 16 prefixes","textChars":16,"textLines":1,"bbox":[70,400,330,58]}
+{"kind":"textbox","id":"sh/8juhwb6h","slide":7,"name":"timeline-body-1","text":"Flush, then send one distinct request per prefix group. Prime and measure share prefixes—not suffixes.","textPreview":"Flush, then send one distinct request per prefix group. Prime and measure share prefixes—not suffixes.","textChars":102,"textLines":1,"bbox":[70,474,330,128]}
+{"kind":"shape","id":"sh/9k3ipgn2","slide":7,"name":"timeline-node-2","bbox":[455,341,18,18]}
+{"kind":"textbox","id":"sh/ydszq1of","slide":7,"name":"timeline-label-2","text":"2 · PAIR","textPreview":"2 · PAIR","textChars":8,"textLines":1,"bbox":[455,286,230,34]}
+{"kind":"textbox","id":"sh/ze10z650","slide":7,"name":"timeline-head-2","text":"AB/BA × 6 seeds","textPreview":"AB/BA × 6 seeds","textChars":15,"textLines":1,"bbox":[455,400,330,58]}
+{"kind":"textbox","id":"sh/zuxcje1w","slide":7,"name":"timeline-body-2","text":"Compare cache off/on at 0%, 50%, and 87.5% reuse. Rotate workload order at a fixed 12.445 req/s.","textPreview":"Compare cache off/on at 0%, 50%, and 87.5% reuse. Rotate workload order at a fixed 12.445 req/s.","textChars":96,"textLines":1,"bbox":[455,474,330,128]}
+{"kind":"shape","id":"sh/etobq90b","slide":7,"name":"timeline-node-3","bbox":[840,341,18,18]}
+{"kind":"textbox","id":"sh/1wful4j2","slide":7,"name":"timeline-label-3","text":"3 · DECIDE","textPreview":"3 · DECIDE","textChars":10,"textLines":1,"bbox":[840,286,230,34]}
+{"kind":"textbox","id":"sh/0v6tszih","slide":7,"name":"timeline-head-3","text":"Estimate paired effect","textPreview":"Estimate paired effect","textChars":22,"textLines":1,"bbox":[840,400,330,58]}
+{"kind":"textbox","id":"sh/nihcne1s","slide":7,"name":"timeline-body-3","text":"Report median cache-on minus off, bootstrap interval, latency guards, and mechanism counters.","textPreview":"Report median cache-on minus off, bootstrap interval, latency guards, and mechanism counters.","textChars":93,"textLines":1,"bbox":[840,474,330,128]}
+{"kind":"textbox","id":"sh/mhobu90n","slide":7,"name":"timeline-design","text":"36 measured cells · critical energy at 100 ms · independent GPM at 1 s","textPreview":"36 measured cells · critical energy at 100 ms · independent GPM at 1 s","textChars":70,"textLines":1,"bbox":[70,182,1000,44]}
+{"kind":"textbox","id":"sh/9kzupozy","slide":7,"name":"footer-note","text":"H100 pilot · Qwen3.5-35B-A3B · TP=2","textPreview":"H100 pilot · Qwen3.5-35B-A3B · TP=2","textChars":35,"textLines":1,"bbox":[42,672,900,22]}
+{"kind":"textbox","id":"sh/ojqtwjid","slide":7,"name":"slide-number","text":"7","textPreview":"7","textChars":1,"textLines":1,"bbox":[1170,672,68,22]}
+{"kind":"notes","id":"nt/3yla5g","slide":7,"text":"[Sources]\n- /home/randomwish/dev/vllm-exploration/experiments/sglang_energy/prefix_cache_campaign.json\n- /home/randomwish/dev/vllm-exploration/experiments/sglang_energy/PREFIX-CACHE-EXPERIMENT.md"}
+{"kind":"slide","id":"sl/p0d8se","slide":8,"title":"DECISION RULE","textShapes":4}
+{"kind":"textbox","id":"sh/ih03e94j","slide":8,"name":"close-eyebrow","text":"DECISION RULE","textPreview":"DECISION RULE","textChars":13,"textLines":1,"bbox":[42,42,500,40]}
+{"kind":"textbox","id":"sh/54bmp43u","slide":8,"name":"close-title","text":"Keep radix cache when the paired energy gain survives the latency and validity gates.","textPreview":"Keep radix cache when the paired energy gain survives the latency and validity gates.","textChars":85,"textLines":1,"bbox":[42,168,1110,260]}
+{"kind":"textbox","id":"sh/432lgjm9","slide":8,"name":"close-subtitle","text":"PX0 must stay neutral. PX50 and PX87 must show lower J/request without throughput regression or telemetry failure.","textPreview":"PX0 must stay neutral. PX50 and PX87 must show lower J/request without throughput regression or telemetry failure.","textChars":114,"textLines":1,"bbox":[42,488,1000,94]}
+{"kind":"textbox","id":"sh/r6t4rel0","slide":8,"name":"close-cost","text":"90 min planned · 99 min hard stop · $10.86 maximum GPU exposure","textPreview":"90 min planned · 99 min hard stop · $10.86 maximum GPU exposure","textChars":63,"textLines":1,"bbox":[42,632,980,32]}
+{"kind":"notes","id":"nt/p0d8se","slide":8,"text":"[Sources]\n- /home/randomwish/dev/vllm-exploration/experiments/sglang_energy/prefix_cache_campaign.json\n- /home/randomwish/dev/vllm-exploration/experiments/sglang_energy/PREFIX-CACHE-EXPERIMENT.md"}

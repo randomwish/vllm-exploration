@@ -1,0 +1,10 @@
+{
+  "max_concurrency": 128,
+  "server_settings": {
+    "chunked_prefill_size": 8192,
+    "max_running_requests": 128,
+    "radix_cache": false
+  },
+  "trace_dir": "/workspace/sglang-energy-results/qwen35-sglang-energy-h100-pilot-20260825T140112Z/traces/PF_closed_n-128_seed-2026082501",
+  "watchdog_seconds": 75.0
+}

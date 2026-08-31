@@ -1,0 +1,49 @@
+{
+  "containerDiskInGb": 100,
+  "costPerHr": 6.58,
+  "createdAt": "2026-08-25 13:59:10.49 +0000 UTC",
+  "desiredStatus": "RUNNING",
+  "env": {
+    "PUBLIC_KEY": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGSYvucscvzpOMZstS1sTmDer9zNLr+6WD/RmEj/Mm/5 hanzhe100100@gmail.com\nssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDGkY3wP2nzhoRzju4U3//NeyGq+jdoFMBvmUPP/AmGJsNaQIZf666EWfQHjhH64p+mH94U76g2ab0d2vTsWxoU1dWgFJuZ4Y09Y6CpJgOdDhpmiCehahs+jIptmlmLUEnOv1YKTg3Rb6VYGFoww4Zt4MAHSCOZbg/5hgpMbAlX65ahuJMVQJWpJzh00zGuNKI1MF8RPzKzJx1Cz+Wpc0rfriTCqUjLhfwSegyvPtyYTQHyXnHaKFuko1Tna6/tLMYg623lh0nzakLPZ8I83RO/pgbap+PD8LG5h2wLBjxFtoVOzBnh3ROvL+wArks365zx7qQSAA0muqu+MST2qh6T runpodctl-ssh-key"
+  },
+  "gpuCount": 2,
+  "id": "mf0e5u3g0zha5t",
+  "imageName": "lmsysorg/sglang@sha256:b688781f3ef66522365ec570885a064b6734750ee22f0d32b3ed49aad87fbf90",
+  "lastStatusChange": "Rented by User: Tue Aug 25 2026 13:59:10 GMT+0000 (Coordinated Universal Time)",
+  "machine": {
+    "dataCenterId": "EUR-IS-3",
+    "diskThroughputMBps": 3614,
+    "gpuId": "NVIDIA H100 80GB HBM3",
+    "location": "IS",
+    "maxDownloadSpeedMbps": 778,
+    "maxUploadSpeedMbps": 852,
+    "reservedCountVersion": 52644,
+    "secureCloud": true,
+    "supportPublicIp": true
+  },
+  "memoryInGb": 377,
+  "name": "qwen35-sglang-energy-h100-pilot-20260825T135907Z",
+  "networkVolumeId": "fheewtfzvw",
+  "ports": [
+    "22/tcp"
+  ],
+  "runtimeStatus": "running",
+  "ssh": {
+    "id": "mf0e5u3g0zha5t",
+    "ip": "213.181.105.231",
+    "name": "qwen35-sglang-energy-h100-pilot-20260825T135907Z",
+    "port": 14216,
+    "ssh_command": "ssh -i /home/randomwish/.runpod/ssh/runpodctl-ssh-key root@213.181.105.231 -p 14216",
+    "ssh_key": {
+      "exists": true,
+      "fingerprint": "SHA256:dk4RYHr9yQcPyob6VWelnSeHfgfyoPjqBZH4E1AeGDE",
+      "in_account": true,
+      "path": "/home/randomwish/.runpod/ssh/runpodctl-ssh-key",
+      "source": "runpodctl doctor"
+    }
+  },
+  "uptimeSeconds": 16,
+  "vcpuCount": 40,
+  "volumeInGb": 0,
+  "volumeMountPath": "/workspace"
+}

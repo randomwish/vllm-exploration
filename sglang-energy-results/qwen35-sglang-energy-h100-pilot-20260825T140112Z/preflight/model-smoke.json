@@ -1,0 +1,32 @@
+{
+  "BAL": {
+    "cohort_end_s": 0.5197798050940037,
+    "elapsed_s": 0.528073038905859,
+    "max_concurrency": 1,
+    "request_count": 1,
+    "run_start_unix_s": 1787666786.1620507,
+    "success_count": 1,
+    "trace_id": "14297dbdec582be08e64c912c4f51214ce171e234cb0ecec7b20df33fac37860",
+    "watchdog_hit": false
+  },
+  "DEC": {
+    "cohort_end_s": 3.783438805490732,
+    "elapsed_s": 3.792274286970496,
+    "max_concurrency": 1,
+    "request_count": 1,
+    "run_start_unix_s": 1787666787.4728477,
+    "success_count": 1,
+    "trace_id": "feab92af006937165b80318b5337b5686cc57589db2424193043267ea29ae5fa",
+    "watchdog_hit": false
+  },
+  "PF": {
+    "cohort_end_s": 0.6212815418839455,
+    "elapsed_s": 0.6305033843964338,
+    "max_concurrency": 1,
+    "request_count": 1,
+    "run_start_unix_s": 1787666786.7761543,
+    "success_count": 1,
+    "trace_id": "2a7135f1487c6c48536b997b58df76b96568a6072c0190d149c91056a70974be",
+    "watchdog_hit": false
+  }
+}

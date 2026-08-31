@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "campaign_id": "qwen35-sglang-energy-h100-pilot",
+  "model": {
+    "path": "Qwen/Qwen3.5-35B-A3B",
+    "revision": "59d61f3ce65a6d9863b86d2e96597125219dc754",
+    "served_name": "qwen35-35b-a3b-energy",
+    "dtype": "bfloat16",
+    "tensor_parallel_size": 2,
+    "context_length": 16384,
+    "mem_fraction_static": 0.82,
+    "schedule_policy": "lpm",
+    "attention_backend": null,
+    "baseline_max_running_requests": 128,
+    "baseline_chunked_prefill_size": 8192,
+    "port": 30000
+  },
+  "runpod": {
+    "cli_path": "./runpodctl",
+    "image": "lmsysorg/sglang@sha256:b688781f3ef66522365ec570885a064b6734750ee22f0d32b3ed49aad87fbf90",
+    "image_tag_source": "lmsysorg/sglang:v0.5.16-cu129",
+    "docker_args": "bash -lc 'apt-get update -qq && DEBIAN_FRONTEND=noninteractive apt-get install -y -qq openssh-server && mkdir -p /run/sshd /root/.ssh && printf \"%s\\n\" \"$PUBLIC_KEY\" > /root/.ssh/authorized_keys && chmod 700 /root/.ssh && chmod 600 /root/.ssh/authorized_keys && exec /usr/sbin/sshd -D -e'",
+    "cloud_type": "SECURE",
+    "gpu_id": "NVIDIA H100 80GB HBM3",
+    "gpu_count": 2,
+    "min_cuda_version": "12.8",
+    "container_disk_gb": 100,
+    "data_center_ids": "EUR-IS-3",
+    "network_volume_id": "fheewtfzvw",
+    "network_volume_size_gb": 150,
+    "volume_mount_path": "/workspace",
+    "ports": "22/tcp",
+    "planned_minutes": 180,
+    "hard_minutes": 198,
+    "observed_two_gpu_hourly_usd": 6.58,
+    "max_gpu_cost_usd": 21.71,
+    "minimum_balance_reserve_usd": 5.00
+  },
+  "measurement": {
+    "screen_arrival_seconds": 45,
+    "confirm_arrival_seconds": 90,
+    "screen_watchdog_seconds": 75,
+    "confirm_watchdog_seconds": 135,
+    "gpu_sample_seconds": 0.1,
+    "service_sample_seconds": 0.5,
+    "minimum_gpu_sample_coverage": 0.98,
+    "maximum_gpu_gap_seconds": 0.25,
+    "energy_crosscheck_relative_error": 0.02,
+    "anchor_drift_fraction": 0.03,
+    "minimum_interesting_energy_fraction": 0.05,
+    "finalization_reserve_seconds": 300
+  },
+  "latency_guard": {
+    "mode": "exploratory_relative",
+    "p95_ttft_ms": null,
+    "p95_tpot_ms": null,
+    "p95_e2e_ms": null,
+    "relative_throughput_regression": 0.02,
+    "relative_p95_e2e_regression": 0.05,
+    "relative_p95_ttft_tpot_regression": 0.10
+  },
+  "design": {
+    "seeds": [2026082501, 2026082502],
+    "holdout_seeds": [2026082591, 2026082592],
+    "capacity_concurrency": [32, 64, 128, 256, 512],
+    "short_capacity_concurrency": [64, 128, 256],
+    "load_fractions": [0.50, 0.70, 0.85, 0.95, 1.05],
+    "max_running_requests": [32, 64, 128, 256],
+    "chunked_prefill_sizes": [-1, 2048, 4096, 8192],
+    "prefix_groups": 16
+  },
+  "workloads": {
+    "BAL": {"input_tokens": 512, "output_tokens": 128, "prefix_tokens": 0},
+    "PF": {"input_tokens": 8192, "output_tokens": 128, "prefix_tokens": 0},
+    "DEC": {"input_tokens": 512, "output_tokens": 1024, "prefix_tokens": 0},
+    "PX0": {"input_tokens": 4096, "output_tokens": 128, "prefix_tokens": 0},
+    "PX50": {"input_tokens": 4096, "output_tokens": 128, "prefix_tokens": 2048},
+    "PX87": {"input_tokens": 4096, "output_tokens": 128, "prefix_tokens": 3584}
+  }
+}

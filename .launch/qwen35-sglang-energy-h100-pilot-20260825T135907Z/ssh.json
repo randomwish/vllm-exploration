@@ -1,0 +1,14 @@
+{
+  "id": "mf0e5u3g0zha5t",
+  "ip": "213.181.105.231",
+  "name": "qwen35-sglang-energy-h100-pilot-20260825T135907Z",
+  "port": 14216,
+  "ssh_command": "ssh -i /home/randomwish/.runpod/ssh/runpodctl-ssh-key root@213.181.105.231 -p 14216",
+  "ssh_key": {
+    "path": "/home/randomwish/.runpod/ssh/runpodctl-ssh-key",
+    "exists": true,
+    "source": "runpodctl doctor",
+    "fingerprint": "SHA256:dk4RYHr9yQcPyob6VWelnSeHfgfyoPjqBZH4E1AeGDE",
+    "in_account": true
+  }
+}

@@ -1,0 +1,24 @@
+Warning: Permanently added '[38.65.239.46]:26377' (ED25519) to the list of known hosts.
+Cloning into 'vllm-exploration'...
+Cloning into 'vllm_source'...
+Updating files:  61% (4102/6644)Updating files:  62% (4120/6644)Updating files:  63% (4186/6644)Updating files:  64% (4253/6644)Updating files:  65% (4319/6644)Updating files:  66% (4386/6644)Updating files:  67% (4452/6644)Updating files:  68% (4518/6644)Updating files:  69% (4585/6644)Updating files:  70% (4651/6644)Updating files:  71% (4718/6644)Updating files:  72% (4784/6644)Updating files:  73% (4851/6644)Updating files:  74% (4917/6644)Updating files:  75% (4983/6644)Updating files:  76% (5050/6644)Updating files:  77% (5116/6644)Updating files:  78% (5183/6644)Updating files:  79% (5249/6644)Updating files:  80% (5316/6644)Updating files:  81% (5382/6644)Updating files:  82% (5449/6644)Updating files:  83% (5515/6644)Updating files:  84% (5581/6644)Updating files:  85% (5648/6644)Updating files:  86% (5714/6644)Updating files:  87% (5781/6644)Updating files:  88% (5847/6644)Updating files:  89% (5914/6644)Updating files:  90% (5980/6644)Updating files:  91% (6047/6644)Updating files:  92% (6113/6644)Updating files:  93% (6179/6644)Updating files:  94% (6246/6644)Updating files:  95% (6312/6644)Updating files:  96% (6379/6644)Updating files:  97% (6445/6644)Updating files:  98% (6512/6644)Updating files:  99% (6578/6644)Updating files: 100% (6644/6644)Updating files: 100% (6644/6644), done.
+error: externally-managed-environment
+
+× This environment is externally managed
+╰─> To install Python packages system-wide, try apt install
+    python3-xyz, where xyz is the package you are trying to
+    install.
+    
+    If you wish to install a non-Debian-packaged Python package,
+    create a virtual environment using python3 -m venv path/to/venv.
+    Then use path/to/venv/bin/python and path/to/venv/bin/pip. Make
+    sure you have python3-full installed.
+    
+    If you wish to install a non-Debian packaged Python application,
+    it may be easiest to use pipx install xyz, which will manage a
+    virtual environment for you. Make sure you have pipx installed.
+    
+    See /usr/share/doc/python3.12/README.venv for more information.
+
+note: If you believe this is a mistake, please contact your Python installation or OS distribution provider. You can override this, at the risk of breaking your Python installation or OS, by passing --break-system-packages.
+hint: See PEP 668 for the detailed specification.

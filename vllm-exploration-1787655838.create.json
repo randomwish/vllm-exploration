@@ -1,0 +1,46 @@
+{
+  "containerDiskInGb": 30,
+  "costPerHr": 0.34,
+  "createdAt": "2026-08-25 11:03:59.354 +0000 UTC",
+  "desiredStatus": "RUNNING",
+  "env": {
+    "PUBLIC_KEY": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGSYvucscvzpOMZstS1sTmDer9zNLr+6WD/RmEj/Mm/5 hanzhe100100@gmail.com\nssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDGkY3wP2nzhoRzju4U3//NeyGq+jdoFMBvmUPP/AmGJsNaQIZf666EWfQHjhH64p+mH94U76g2ab0d2vTsWxoU1dWgFJuZ4Y09Y6CpJgOdDhpmiCehahs+jIptmlmLUEnOv1YKTg3Rb6VYGFoww4Zt4MAHSCOZbg/5hgpMbAlX65ahuJMVQJWpJzh00zGuNKI1MF8RPzKzJx1Cz+Wpc0rfriTCqUjLhfwSegyvPtyYTQHyXnHaKFuko1Tna6/tLMYg623lh0nzakLPZ8I83RO/pgbap+PD8LG5h2wLBjxFtoVOzBnh3ROvL+wArks365zx7qQSAA0muqu+MST2qh6T runpodctl-ssh-key"
+  },
+  "gpuCount": 1,
+  "id": "4xid4a0e1tbsib",
+  "imageName": "runpod/pytorch:1.1.0-cu1300-torch291-ubuntu2404-cluster",
+  "lastStatusChange": "Rented by User: Tue Aug 25 2026 11:03:59 GMT+0000 (Coordinated Universal Time)",
+  "machine": {
+    "diskThroughputMBps": 5473,
+    "gpuId": "NVIDIA GeForce RTX 4090",
+    "location": "US",
+    "maxDownloadSpeedMbps": 8118,
+    "maxUploadSpeedMbps": 10111,
+    "reservedCountVersion": 19381,
+    "supportPublicIp": true
+  },
+  "memoryInGb": 50,
+  "name": "vllm-exploration-1787655838",
+  "ports": [
+    "22/tcp"
+  ],
+  "runtimeStatus": "running",
+  "ssh": {
+    "id": "4xid4a0e1tbsib",
+    "ip": "38.65.239.46",
+    "name": "vllm-exploration-1787655838",
+    "port": 26377,
+    "ssh_command": "ssh -i /home/randomwish/.runpod/ssh/runpodctl-ssh-key root@38.65.239.46 -p 26377",
+    "ssh_key": {
+      "exists": true,
+      "fingerprint": "SHA256:dk4RYHr9yQcPyob6VWelnSeHfgfyoPjqBZH4E1AeGDE",
+      "in_account": true,
+      "path": "/home/randomwish/.runpod/ssh/runpodctl-ssh-key",
+      "source": "runpodctl doctor"
+    }
+  },
+  "uptimeSeconds": 2,
+  "vcpuCount": 32,
+  "volumeInGb": 30,
+  "volumeMountPath": "/workspace"
+}
