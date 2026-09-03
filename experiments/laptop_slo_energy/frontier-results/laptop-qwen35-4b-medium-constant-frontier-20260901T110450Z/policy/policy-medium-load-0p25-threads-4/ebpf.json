@@ -1,0 +1,26 @@
+{
+  "boundary": "one-second monotonic buckets whose centers fall inside the measured policy window; raw output retains the pre-arrival attachment period",
+  "prelude_seconds": 91.18270185499568,
+  "probe": "/home/randomwish/dev/vllm-exploration/experiments/laptop_slo_energy/probes/runqlat.bt",
+  "returncode": 0,
+  "runqlat_us": {
+    "ge_100us_fraction": 0.01456355003652301,
+    "ge_100us_samples": 319,
+    "ge_10ms_fraction": 0.0,
+    "ge_10ms_samples": 0,
+    "ge_1ms_fraction": 0.00022826880934989044,
+    "ge_1ms_samples": 5,
+    "max_us": 1690,
+    "mean_us": 17.636093864134406,
+    "mode": "one-second-aggregates",
+    "samples": 21904,
+    "selected_1s_buckets": 1800
+  },
+  "samples": 21904,
+  "selected_time_buckets": 1800,
+  "started": true,
+  "started_bpf_clock_s": 115633.915192521,
+  "started_unix_s": 1788260908.432287,
+  "total_samples_including_prelude": 25952,
+  "valid": true
+}

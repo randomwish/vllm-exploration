@@ -1,0 +1,12 @@
+{
+  "cell_id": "cal-medium-threads-4-unpinned",
+  "duration_seconds": 180.0,
+  "load_fraction": null,
+  "offered_rate_requests_s": null,
+  "phase": "calibration",
+  "profile": "synchronous",
+  "seed": 42,
+  "threads": 4,
+  "treatment": "threads-4-unpinned",
+  "workload": "medium"
+}

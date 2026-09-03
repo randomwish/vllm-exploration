@@ -1,0 +1,41 @@
+0.00.027.666 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.028.419 W srv  llama_server: -----------------
+0.00.028.421 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.028.421 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.028.422 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.028.422 W srv  llama_server: -----------------
+0.00.029.711 I srv    load_model: loading model '/home/randomwish/models/Qwen3.5-4B-Q4_K_M.gguf'
+0.01.646.275 I srv    load_model: initializing, n_slots = 1, n_ctx_slot = 16384, kv_unified = 'false'
+0.01.652.478 I srv  llama_server: model loaded
+0.01.652.487 I srv  llama_server: listening on http://127.0.0.1:18085
+0.02.003.640 I slot get_availabl: id  0 | task -1 | selected slot by LRU, t_last = -1
+0.02.003.695 I slot launch_slot_: id  0 | task 0 | processing task, is_child = 0
+0.03.258.037 I slot print_timing: id  0 | task 0 | prompt eval time =     558.94 ms /    14 tokens (   39.92 ms per token,    25.05 tokens per second)
+0.03.258.049 I slot print_timing: id  0 | task 0 |        eval time =     695.29 ms /     8 tokens (   86.91 ms per token,    11.51 tokens per second)
+0.03.258.051 I slot print_timing: id  0 | task 0 |       total time =    1254.23 ms /    22 tokens
+0.03.258.064 I slot print_timing: id  0 | task 0 |    graphs reused =          7
+0.03.258.122 I slot      release: id  0 | task 0 | stop processing: n_tokens = 21, truncated = 0
+1.52.635.113 I slot get_availabl: id  0 | task -1 | selected slot by LRU, t_last = 58116117634
+1.52.891.303 I slot launch_slot_: id  0 | task 10 | processing task, is_child = 0
+1.59.241.230 I slot print_timing: id  0 | task 10 | prompt processing, n_tokens =   1542, progress = 0.75, t =   6.35 s / 242.84 tokens per second
+2.01.444.736 I slot print_timing: id  0 | task 10 | prompt processing, n_tokens =   2054, progress = 1.00, t =   8.55 s / 240.14 tokens per second
+2.10.743.823 I slot print_timing: id  0 | task 10 | n_decoded =    100, tg =  11.63 t/s, tg_3s =  11.63 t/s
+2.13.139.995 I slot print_timing: id  0 | task 10 | prompt eval time =    9250.70 ms /  2058 tokens (    4.49 ms per token,   222.47 tokens per second)
+2.13.140.000 I slot print_timing: id  0 | task 10 |        eval time =   10997.94 ms /   128 tokens (   85.92 ms per token,    11.64 tokens per second)
+2.13.140.001 I slot print_timing: id  0 | task 10 |       total time =   20248.64 ms /  2186 tokens
+2.13.140.003 I slot print_timing: id  0 | task 10 |    graphs reused =        133
+2.13.140.161 I slot      release: id  0 | task 10 | stop processing: n_tokens = 2185, truncated = 0
+3.35.501.255 I slot get_availabl: id  0 | task -1 | selected slot by LRU, t_last = 58245999674
+3.35.853.800 I slot launch_slot_: id  0 | task 141 | processing task, is_child = 0
+3.41.802.899 I slot print_timing: id  0 | task 141 | prompt processing, n_tokens =   1541, progress = 0.75, t =   5.95 s / 259.03 tokens per second
+3.43.884.259 I slot print_timing: id  0 | task 141 | prompt processing, n_tokens =   2053, progress = 1.00, t =   8.03 s / 255.65 tokens per second
+65.45.819.130 I slot print_timing: id  0 | task 141 | n_decoded =    100, tg =  10.28 t/s, tg_3s =  10.28 t/s
+65.48.517.509 I slot print_timing: id  0 | task 141 | prompt eval time =    8754.43 ms /  2057 tokens (    4.26 ms per token,   234.97 tokens per second)
+65.48.517.517 I slot print_timing: id  0 | task 141 |        eval time =   12428.19 ms /   128 tokens (   97.10 ms per token,    10.30 tokens per second)
+65.48.517.519 I slot print_timing: id  0 | task 141 |       total time =   21182.62 ms /  2185 tokens
+65.48.517.521 I slot print_timing: id  0 | task 141 |    graphs reused =        259
+65.48.517.692 I slot      release: id  0 | task 141 | stop processing: n_tokens = 2184, truncated = 0
+65.48.535.133 I slot get_availabl: id  0 | task -1 | selected slot by LRU, t_last = 58349896178
+65.48.863.190 I slot launch_slot_: id  0 | task 272 | processing task, is_child = 0
+65.48.870.309 W srv          stop: cancel task, id_task = 272
+65.54.237.850 I srv    operator(): operator(): cleaning up before exit...

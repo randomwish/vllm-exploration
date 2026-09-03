@@ -1,0 +1,19 @@
+{
+  "checks": {
+    "benchmark_marker_detected": true,
+    "collectors_prepared_before_request": true,
+    "ebpf_valid": true,
+    "energy_valid": true,
+    "guidellm_exit_zero": true,
+    "guidellm_report_parsed": true,
+    "host_samples_present": true,
+    "measurement_window_duration_valid": false,
+    "minimum_successful_requests": false,
+    "server_request_marker_detected": true,
+    "suspend_gap_within_limit": false
+  },
+  "execution_valid": false,
+  "guidellm_error": null,
+  "sample_sufficient": false,
+  "valid": false
+}

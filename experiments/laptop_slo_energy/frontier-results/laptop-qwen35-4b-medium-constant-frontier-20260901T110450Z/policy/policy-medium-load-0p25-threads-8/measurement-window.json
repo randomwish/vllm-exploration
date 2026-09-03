@@ -1,0 +1,21 @@
+{
+  "collector_end_lag_from_guidellm_s": 0.32405519485473633,
+  "collectors_prepared": true,
+  "duration_s": 1800.0001535580013,
+  "finished_bpf_clock_s": 119431.577933175,
+  "finished_monotonic_s": 49688.706974969,
+  "finished_unix_s": 1788264706.0950284,
+  "guidellm_finished_unix_s": 1788264705.7709732,
+  "guidellm_started_unix_s": 1788262905.7709732,
+  "marker": "GuideLLM Setup complete, starting benchmarks",
+  "marker_detected": true,
+  "request_marker": "llama-server processing task",
+  "request_marker_detected": true,
+  "server_trigger_lag_from_guidellm_s": 0.323901891708374,
+  "started_bpf_clock_s": 117631.577774488,
+  "started_monotonic_s": 47888.706821411,
+  "started_unix_s": 1788262906.094875,
+  "suspend_gap_s": 0.0,
+  "target_duration_s": 1800.0,
+  "wall_duration_s": 1800.0001533031464
+}

@@ -1,0 +1,101 @@
+/*
+ * Record scheduler run-queue latency, task migrations, and futex coordination
+ * for tasks named llama-server. One-second scalar aggregates keep map
+ * cardinality bounded during long laptop runs while retaining enough time
+ * resolution to align kernel behavior with request prefill and decode phases.
+ * This uses stable tracepoint fields, not kernel structure offsets.
+ */
+
+tracepoint:sched:sched_wakeup,
+tracepoint:sched:sched_wakeup_new
+/args->comm == "llama-server"/
+{
+  @queued_at[args->pid] = nsecs;
+}
+
+tracepoint:sched:sched_switch
+{
+  if (args->prev_comm == "llama-server" && args->prev_state == 0) {
+    @queued_at[args->prev_pid] = nsecs;
+  }
+
+  if (@queued_at[args->next_pid]) {
+    $bucket_1s = nsecs / 1000000000;
+    $delay_us = (nsecs - @queued_at[args->next_pid]) / 1000;
+    $cpu_marker = cpu + 1;
+    if (@last_cpu[args->next_pid] &&
+        @last_cpu[args->next_pid] != $cpu_marker) {
+      @cpu_changes_1s[$bucket_1s] = count();
+    }
+    @last_cpu[args->next_pid] = $cpu_marker;
+    @runqlat_count_1s[$bucket_1s] = count();
+    @runqlat_sum_us_1s[$bucket_1s] = sum($delay_us);
+    @runqlat_max_us_1s[$bucket_1s] = max($delay_us);
+    if ($delay_us >= 100) {
+      @runqlat_ge_100us_1s[$bucket_1s] = count();
+    }
+    if ($delay_us >= 1000) {
+      @runqlat_ge_1ms_1s[$bucket_1s] = count();
+    }
+    if ($delay_us >= 10000) {
+      @runqlat_ge_10ms_1s[$bucket_1s] = count();
+    }
+    delete(@queued_at[args->next_pid]);
+  }
+}
+
+/* Count migrations emitted by the scheduler, rather than inferring them from
+ * the CPUs used by consecutive schedule-ins. This still includes every
+ * llama-server task, not only llama.cpp compute workers. */
+tracepoint:sched:sched_migrate_task
+/str(args->comm) == "llama-server"/
+{
+  $bucket_1s = nsecs / 1000000000;
+  @sched_migrate_task_1s[$bucket_1s] = count();
+}
+
+/* Linux masks the futex operation with FUTEX_CMD_MASK (0x7f). Time operations
+ * that can block a caller; count wake/requeue operations separately. The
+ * syscall duration is an off-CPU coordination proxy, not proof of a specific
+ * llama.cpp barrier or mutex. */
+tracepoint:syscalls:sys_enter_futex
+/comm == "llama-server"/
+{
+  $command = args->op & 0x7f;
+  if ($command == 0 || $command == 6 || $command == 9 ||
+      $command == 11 || $command == 13) {
+    @futex_wait_started[tid] = nsecs;
+  }
+  if ($command == 1 || $command == 3 || $command == 4 ||
+      $command == 5 || $command == 10 || $command == 12) {
+    $bucket_1s = nsecs / 1000000000;
+    @futex_wake_calls_1s[$bucket_1s] = count();
+  }
+}
+
+tracepoint:syscalls:sys_exit_futex
+/@futex_wait_started[tid]/
+{
+  $bucket_1s = nsecs / 1000000000;
+  $duration_us = (nsecs - @futex_wait_started[tid]) / 1000;
+  @futex_wait_count_1s[$bucket_1s] = count();
+  @futex_wait_sum_us_1s[$bucket_1s] = sum($duration_us);
+  @futex_wait_max_us_1s[$bucket_1s] = max($duration_us);
+  if ($duration_us >= 100) {
+    @futex_wait_ge_100us_1s[$bucket_1s] = count();
+  }
+  if ($duration_us >= 1000) {
+    @futex_wait_ge_1ms_1s[$bucket_1s] = count();
+  }
+  if ($duration_us >= 10000) {
+    @futex_wait_ge_10ms_1s[$bucket_1s] = count();
+  }
+  delete(@futex_wait_started[tid]);
+}
+
+END
+{
+  clear(@queued_at);
+  clear(@last_cpu);
+  clear(@futex_wait_started);
+}

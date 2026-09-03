@@ -1,0 +1,6 @@
+{
+  "error": "RuntimeError: preflight failed: passwordless or pre-authorized sudo is unavailable; run sudo -v",
+  "finished_unix_s": 1788332776.4401057,
+  "resumable": true,
+  "status": "failed"
+}

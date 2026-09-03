@@ -1,0 +1,44 @@
+{
+  "argv": [
+    "/home/randomwish/dev/llama.cpp/build/bin/llama-server",
+    "-m",
+    "/home/randomwish/models/Qwen3.5-4B-Q4_K_M.gguf",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "18084",
+    "-c",
+    "16384",
+    "-np",
+    "1",
+    "-t",
+    "4",
+    "-tb",
+    "4",
+    "--cpu-mask",
+    "0x55",
+    "--cpu-strict",
+    "1",
+    "--cpu-mask-batch",
+    "0x55",
+    "--cpu-strict-batch",
+    "1",
+    "--ubatch-size",
+    "512"
+  ],
+  "treatment": {
+    "batch_threads": 4,
+    "name": "threads-4-fast-cores",
+    "server_args": [
+      "--cpu-mask",
+      "0x55",
+      "--cpu-strict",
+      "1",
+      "--cpu-mask-batch",
+      "0x55",
+      "--cpu-strict-batch",
+      "1"
+    ],
+    "threads": 4
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "cell_id": "policy-medium-load-0p25-threads-4-batch-4",
+  "duration_seconds": 1080.0,
+  "load_fraction": 0.25,
+  "offered_rate_requests_s": 0.011111111111111112,
+  "phase": "policy",
+  "profile": "constant",
+  "seed": 42,
+  "threads": 4,
+  "treatment": "threads-4-batch-4",
+  "workload": "medium"
+}

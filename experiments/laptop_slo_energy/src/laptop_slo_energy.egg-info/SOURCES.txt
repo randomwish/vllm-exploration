@@ -1,0 +1,17 @@
+README.md
+pyproject.toml
+src/laptop_energy/__init__.py
+src/laptop_energy/cli.py
+src/laptop_energy/config.py
+src/laptop_energy/energy.py
+src/laptop_energy/guidellm.py
+src/laptop_energy/plan.py
+src/laptop_energy/preflight.py
+src/laptop_energy/runtime.py
+src/laptop_slo_energy.egg-info/PKG-INFO
+src/laptop_slo_energy.egg-info/SOURCES.txt
+src/laptop_slo_energy.egg-info/dependency_links.txt
+src/laptop_slo_energy.egg-info/entry_points.txt
+src/laptop_slo_energy.egg-info/requires.txt
+src/laptop_slo_energy.egg-info/top_level.txt
+tests/test_core.py

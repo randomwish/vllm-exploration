@@ -1,0 +1,20 @@
+{
+  "boundary": "local package for the configured benchmark window, aligned to the first post-setup llama-server request using pre-armed, disabled perf counters; includes model server and active load generator, excludes tokenizer and request-loader setup",
+  "events": {
+    "power/energy-pkg/": {
+      "joules": 8837.3,
+      "raw_value": "8837.30",
+      "unit": "Joules"
+    },
+    "power_core/energy-core/": {
+      "joules": 1943.2,
+      "raw_value": "1943.20",
+      "unit": "Joules"
+    }
+  },
+  "primary_event": "power/energy-pkg/",
+  "source": "linux-perf-system-wide",
+  "total_energy_j": 8837.3,
+  "valid": true,
+  "window_seconds": 1080.0001202729982
+}

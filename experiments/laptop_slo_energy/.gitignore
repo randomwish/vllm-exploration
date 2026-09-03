@@ -1,0 +1,7 @@
+.venv/
+results/
+smoke-results/
+aligned-smoke-results/
+pilot-results/
+__pycache__/
+*.py[cod]

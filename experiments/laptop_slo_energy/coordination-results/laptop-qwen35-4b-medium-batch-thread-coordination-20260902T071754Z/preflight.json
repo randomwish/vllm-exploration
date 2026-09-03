@@ -1,0 +1,65 @@
+{
+  "commands": {
+    "bpftrace": {
+      "found": true,
+      "path": "/usr/bin/bpftrace",
+      "returncode": 0,
+      "version": "bpftrace v0.20.2"
+    },
+    "guidellm": {
+      "found": true,
+      "path": "/home/randomwish/dev/vllm-exploration/experiments/laptop_slo_energy/.venv/bin/guidellm",
+      "returncode": 0,
+      "version": "guidellm version: 0.7.2"
+    },
+    "llama_server": {
+      "found": true,
+      "path": "/home/randomwish/dev/llama.cpp/build/bin/llama-server",
+      "returncode": 0,
+      "version": "version: 10238 (4ed2b13f7)"
+    },
+    "perf": {
+      "found": true,
+      "path": "/usr/lib/linux-hwe-6.11-tools-6.11.0-19/perf",
+      "returncode": 0,
+      "version": "perf version 6.11.11"
+    }
+  },
+  "ebpf_compile": {
+    "checked": true,
+    "returncode": 0,
+    "stderr": "[DEBUG] libbpf: loading kernel BTF '/sys/kernel/btf/vmlinux': 0\n[DEBUG] libbpf: loading kernel BTF '/sys/kernel/btf/vmlinux': 0",
+    "valid": true
+  },
+  "ebpf_probe": "/home/randomwish/dev/vllm-exploration/experiments/laptop_slo_energy/probes/runqlat.bt",
+  "energy_events": [
+    "power/energy-pkg/",
+    "power_core/energy-core/"
+  ],
+  "errors": [],
+  "model": {
+    "exists": true,
+    "path": "/home/randomwish/models/Qwen3.5-4B-Q4_K_M.gguf",
+    "sha256": "00fe7986ff5f6b463e62455821146049db6f9313603938a70800d1fb69ef11a4",
+    "size_bytes": 2740937888
+  },
+  "mutates_system": false,
+  "ready_to_execute": true,
+  "server_port": {
+    "available": true,
+    "error": null,
+    "host": "127.0.0.1",
+    "port": 18085
+  },
+  "sudo_noninteractive_ready": true,
+  "system": {
+    "cpu_count": 16,
+    "kernel_btf": "/sys/kernel/btf/vmlinux",
+    "machine": "x86_64",
+    "perf_event_paranoid": 4,
+    "platform": "Linux-6.17.0-1032-oem-x86_64-with-glibc2.39",
+    "processor": "x86_64",
+    "unprivileged_bpf_disabled": 2
+  },
+  "warnings": []
+}

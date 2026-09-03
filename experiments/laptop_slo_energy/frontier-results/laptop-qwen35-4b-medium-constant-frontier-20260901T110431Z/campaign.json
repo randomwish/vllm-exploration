@@ -1,0 +1,89 @@
+{
+  "campaign_name": "laptop-qwen35-4b-medium-constant-frontier",
+  "design": {
+    "capacity_baseline_treatment": "threads-8",
+    "load_fractions": [
+      0.25
+    ],
+    "paired_absolute_rates": true,
+    "restart_server_between_policy_cells": true
+  },
+  "evaluation": {
+    "minimum_successful_requests": 12,
+    "policy_status": "exploratory-medium-constant-frontier-not-an-sla",
+    "require_ebpf": true,
+    "require_energy": true,
+    "require_guidellm_metrics": true,
+    "success_rate_min": 0.95
+  },
+  "guidellm": {
+    "binary": "guidellm",
+    "capacity_max_concurrency": 1,
+    "capacity_profile": "synchronous",
+    "capacity_seconds": 180,
+    "policy_max_concurrency": 8,
+    "policy_max_seconds": 3600,
+    "policy_profile": "constant",
+    "policy_seconds": 600,
+    "policy_target_arrivals": 20,
+    "rampup_seconds": 0,
+    "required_version": "0.7.2",
+    "seed": 42,
+    "tokenizer": "Qwen/Qwen3.5-4B"
+  },
+  "measurement": {
+    "ebpf": {
+      "enabled": true,
+      "probe": "probes/runqlat.bt",
+      "requires_sudo": true
+    },
+    "energy": {
+      "diagnostic_events": [
+        "power_core/energy-core/"
+      ],
+      "enabled": true,
+      "primary_event": "power/energy-pkg/",
+      "requires_sudo": true
+    },
+    "host_sample_seconds": 0.5,
+    "max_suspend_gap_seconds": 5
+  },
+  "model": {
+    "hf_ref": "",
+    "id": "Qwen3.5-4B-Q4_K_M",
+    "path": "/home/randomwish/models/Qwen3.5-4B-Q4_K_M.gguf",
+    "source_is_immutable": true
+  },
+  "schema_version": 1,
+  "server": {
+    "binary": "/home/randomwish/dev/llama.cpp/build/bin/llama-server",
+    "context_size": 16384,
+    "extra_args": [],
+    "host": "127.0.0.1",
+    "parallel_slots": 1,
+    "port": 18083,
+    "ready_timeout_seconds": 180
+  },
+  "treatments": [
+    {
+      "name": "threads-4",
+      "threads": 4
+    },
+    {
+      "name": "threads-8",
+      "threads": 8
+    }
+  ],
+  "workloads": [
+    {
+      "name": "medium",
+      "output_tokens": 128,
+      "prompt_tokens": 2048,
+      "slo": {
+        "p95_itl_ms": 120,
+        "p95_ttft_ms": 8000,
+        "p99_e2e_ms": 30000
+      }
+    }
+  ]
+}

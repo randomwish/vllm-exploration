@@ -1,0 +1,147 @@
+{
+  "cell_id": "policy-medium-load-0p25-threads-4-fast-cores",
+  "collector_end_lag_from_guidellm_s": 0.27358317375183105,
+  "collectors_prepared": true,
+  "duration_s": 1080.0001202729982,
+  "duration_seconds": 1080.0,
+  "ebpf": {
+    "boundary": "one-second monotonic buckets whose centers fall inside the measured policy window; raw output retains the pre-arrival attachment period",
+    "prelude_seconds": 91.11377383999934,
+    "probe": "/home/randomwish/dev/vllm-exploration/experiments/laptop_slo_energy/probes/runqlat.bt",
+    "returncode": 0,
+    "runqlat_us": {
+      "cpu_migration_fraction": 0.19558661272526665,
+      "cpu_migration_samples": 2659,
+      "ge_100us_fraction": 0.009635895549834498,
+      "ge_100us_samples": 131,
+      "ge_10ms_fraction": 0.0,
+      "ge_10ms_samples": 0,
+      "ge_1ms_fraction": 0.000735564545788893,
+      "ge_1ms_samples": 10,
+      "max_us": 1985,
+      "mean_us": 16.302758367046707,
+      "mode": "one-second-aggregates",
+      "samples": 13595,
+      "selected_1s_buckets": 1080
+    },
+    "samples": 13595,
+    "selected_time_buckets": 1080,
+    "started": true,
+    "started_bpf_clock_s": 124248.900003041,
+    "started_unix_s": 1788269523.417102,
+    "total_samples_including_prelude": 17684,
+    "valid": true
+  },
+  "efficiency": {
+    "joules_per_successful_request": 736.4416666666666,
+    "output_tokens_per_joule": 0.17437452615617896,
+    "slo_good_output_tokens_per_joule": 0.0
+  },
+  "energy": {
+    "boundary": "local package for the configured benchmark window, aligned to the first post-setup llama-server request using pre-armed, disabled perf counters; includes model server and active load generator, excludes tokenizer and request-loader setup",
+    "events": {
+      "power/energy-pkg/": {
+        "joules": 8837.3,
+        "raw_value": "8837.30",
+        "unit": "Joules"
+      },
+      "power_core/energy-core/": {
+        "joules": 1943.2,
+        "raw_value": "1943.20",
+        "unit": "Joules"
+      }
+    },
+    "primary_event": "power/energy-pkg/",
+    "source": "linux-perf-system-wide",
+    "total_energy_j": 8837.3,
+    "valid": true,
+    "window_seconds": 1080.0001202729982
+  },
+  "finished_bpf_clock_s": 125420.013897605,
+  "finished_monotonic_s": 55677.142943827,
+  "finished_unix_s": 1788270694.5309978,
+  "guide": {
+    "admitted_requests": 12,
+    "completed_requests_per_second": 0.01111111111111111,
+    "errored_requests": 0,
+    "guidellm_schema_version": 2.0,
+    "guidellm_version": "0.7.2",
+    "incomplete_requests": 0,
+    "measurement_duration_s": 1080.0,
+    "measurement_end_unix_s": 1788270694.2574146,
+    "measurement_start_unix_s": 1788269614.2574146,
+    "output_tokens_successful": 1541.0000000000002,
+    "p50_itl_ms": 92.73003041744232,
+    "p50_ttft_ms": 9920.680522918701,
+    "p95_e2e_ms": 24750.464916229248,
+    "p95_itl_ms": 101.00524387662372,
+    "p95_ttft_ms": 12023.162603378296,
+    "p99_e2e_ms": 24750.464916229248,
+    "p99_itl_ms": 101.00524387662372,
+    "p99_ttft_ms": 12023.162603378296,
+    "success_rate": 1.0,
+    "successful_requests": 12
+  },
+  "guidellm_finished_unix_s": 1788270694.2574146,
+  "guidellm_started_unix_s": 1788269614.2574146,
+  "host": {
+    "interval_seconds": 0.5,
+    "sample_count": 2330,
+    "valid": true,
+    "window_sample_count": 2148
+  },
+  "load_fraction": 0.25,
+  "marker": "GuideLLM Setup complete, starting benchmarks",
+  "marker_detected": true,
+  "offered_rate_requests_s": 0.011111111111111112,
+  "phase": "policy",
+  "profile": "constant",
+  "request_marker": "llama-server processing task",
+  "request_marker_detected": true,
+  "seed": 42,
+  "server_trigger_lag_from_guidellm_s": 0.27346277236938477,
+  "slo": {
+    "cell_passes_slo": false,
+    "checks": {
+      "p95_itl_ms": true,
+      "p95_ttft_ms": false,
+      "p99_e2e_ms": true,
+      "success_rate": true
+    },
+    "policy_label": "medium",
+    "thresholds": {
+      "p95_itl_ms": 120.0,
+      "p95_ttft_ms": 8000.0,
+      "p99_e2e_ms": 30000.0,
+      "success_rate_min": 0.95
+    }
+  },
+  "started_bpf_clock_s": 124340.013776881,
+  "started_monotonic_s": 54597.142823554,
+  "started_unix_s": 1788269614.5308774,
+  "suspend_gap_s": 1.2838427210226655e-07,
+  "target_duration_s": 1080.0,
+  "threads": 4,
+  "treatment": "threads-4-fast-cores",
+  "validity": {
+    "checks": {
+      "benchmark_marker_detected": true,
+      "collectors_prepared_before_request": true,
+      "ebpf_valid": true,
+      "energy_valid": true,
+      "guidellm_exit_zero": true,
+      "guidellm_report_parsed": true,
+      "host_samples_present": true,
+      "measurement_window_duration_valid": true,
+      "minimum_successful_requests": true,
+      "server_request_marker_detected": true,
+      "suspend_gap_within_limit": true
+    },
+    "execution_valid": true,
+    "guidellm_error": null,
+    "sample_sufficient": true,
+    "valid": true
+  },
+  "wall_duration_s": 1080.0001204013824,
+  "workload": "medium"
+}

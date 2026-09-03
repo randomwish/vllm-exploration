@@ -1,0 +1,3 @@
+cell_id,workload,treatment,threads,load_fraction,offered_rate_requests_s,target_duration_s,successful_requests,success_rate,p95_ttft_ms,p95_itl_ms,p99_e2e_ms,total_energy_j,slo_pass,slo_good_output_tokens_per_joule,valid,execution_valid,sample_sufficient
+policy-medium-load-0p25-threads-4-batch-4,medium,threads-4-batch-4,4,0.25,0.009722222222222222,1235.0,12,0.9230769230769231,10751.575231552124,98.13116490840912,23269.712924957275,9101.34,False,0.0,True,True,True
+policy-medium-load-0p25-threads-4-batch-2,medium,threads-4-batch-2,4,0.25,0.009722222222222222,1235.0,2,1.0,9518.264055252075,29322.116742922564,3733030.281305313,4294946279.64,False,0.0,False,False,False

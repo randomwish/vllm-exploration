@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "campaign_name": "laptop-qwen35-4b-collector-smoke",
+  "model": {
+    "id": "Qwen3.5-4B-Q4_K_M",
+    "path": "/home/randomwish/models/Qwen3.5-4B-Q4_K_M.gguf",
+    "hf_ref": "",
+    "source_is_immutable": true
+  },
+  "server": {
+    "binary": "/home/randomwish/dev/llama.cpp/build/bin/llama-server",
+    "host": "127.0.0.1",
+    "port": 18081,
+    "context_size": 2048,
+    "parallel_slots": 1,
+    "ready_timeout_seconds": 180,
+    "extra_args": []
+  },
+  "guidellm": {
+    "binary": "guidellm",
+    "required_version": "0.7.2",
+    "tokenizer": "Qwen/Qwen3.5-4B",
+    "seed": 42,
+    "capacity_seconds": 5,
+    "capacity_max_concurrency": 2,
+    "policy_seconds": 5,
+    "policy_max_concurrency": 2,
+    "rampup_seconds": 1
+  },
+  "workloads": [
+    {
+      "name": "smoke",
+      "prompt_tokens": 128,
+      "output_tokens": 16,
+      "slo": {
+        "p95_ttft_ms": 30000,
+        "p95_itl_ms": 1000,
+        "p99_e2e_ms": 60000
+      }
+    }
+  ],
+  "treatments": [
+    {"name": "threads-4", "threads": 4},
+    {"name": "threads-8", "threads": 8}
+  ],
+  "design": {
+    "capacity_baseline_treatment": "threads-8",
+    "load_fractions": [0.5],
+    "paired_absolute_rates": true,
+    "restart_server_between_policy_cells": true
+  },
+  "measurement": {
+    "energy": {
+      "enabled": true,
+      "primary_event": "power/energy-pkg/",
+      "diagnostic_events": ["power_core/energy-core/"],
+      "requires_sudo": true
+    },
+    "ebpf": {
+      "enabled": true,
+      "probe": "probes/runqlat.bt",
+      "requires_sudo": true
+    },
+    "host_sample_seconds": 0.25
+  },
+  "evaluation": {
+    "policy_status": "collector-smoke-not-an-sla",
+    "success_rate_min": 0.9,
+    "require_energy": true,
+    "require_ebpf": true,
+    "require_guidellm_metrics": true,
+    "minimum_successful_requests": 1
+  }
+}

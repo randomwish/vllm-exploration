@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "campaign_name": "laptop-qwen35-4b-medium-fast-core-affinity",
+  "model": {
+    "id": "Qwen3.5-4B-Q4_K_M",
+    "path": "/home/randomwish/models/Qwen3.5-4B-Q4_K_M.gguf",
+    "hf_ref": "",
+    "source_is_immutable": true
+  },
+  "server": {
+    "binary": "/home/randomwish/dev/llama.cpp/build/bin/llama-server",
+    "host": "127.0.0.1",
+    "port": 18084,
+    "context_size": 16384,
+    "parallel_slots": 1,
+    "ready_timeout_seconds": 180,
+    "extra_args": [
+      "--ubatch-size",
+      "512"
+    ]
+  },
+  "guidellm": {
+    "binary": "guidellm",
+    "required_version": "0.7.2",
+    "tokenizer": "Qwen/Qwen3.5-4B",
+    "seed": 42,
+    "capacity_profile": "synchronous",
+    "capacity_seconds": 180,
+    "capacity_max_concurrency": 1,
+    "policy_profile": "constant",
+    "policy_seconds": 600,
+    "policy_target_arrivals": 12,
+    "policy_max_seconds": 2400,
+    "policy_max_concurrency": 8,
+    "rampup_seconds": 0
+  },
+  "workloads": [
+    {
+      "name": "medium",
+      "prompt_tokens": 2048,
+      "output_tokens": 128,
+      "slo": {
+        "p95_ttft_ms": 8000,
+        "p95_itl_ms": 120,
+        "p99_e2e_ms": 30000
+      }
+    }
+  ],
+  "treatments": [
+    {
+      "name": "threads-4-unpinned",
+      "threads": 4,
+      "batch_threads": 4,
+      "server_args": []
+    },
+    {
+      "name": "threads-4-fast-cores",
+      "threads": 4,
+      "batch_threads": 4,
+      "server_args": [
+        "--cpu-mask",
+        "0x55",
+        "--cpu-strict",
+        "1",
+        "--cpu-mask-batch",
+        "0x55",
+        "--cpu-strict-batch",
+        "1"
+      ]
+    }
+  ],
+  "design": {
+    "capacity_baseline_treatment": "threads-4-unpinned",
+    "load_fractions": [
+      0.25
+    ],
+    "paired_absolute_rates": true,
+    "restart_server_between_policy_cells": true
+  },
+  "measurement": {
+    "energy": {
+      "enabled": true,
+      "primary_event": "power/energy-pkg/",
+      "diagnostic_events": [
+        "power_core/energy-core/"
+      ],
+      "requires_sudo": true
+    },
+    "ebpf": {
+      "enabled": true,
+      "probe": "probes/runqlat.bt",
+      "requires_sudo": true
+    },
+    "host_sample_seconds": 0.5,
+    "max_suspend_gap_seconds": 5
+  },
+  "evaluation": {
+    "policy_status": "exploratory-fast-core-affinity-screen-not-an-sla",
+    "success_rate_min": 0.95,
+    "require_energy": true,
+    "require_ebpf": true,
+    "require_guidellm_metrics": true,
+    "minimum_successful_requests": 10
+  }
+}

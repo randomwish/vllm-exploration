@@ -1,0 +1,299 @@
+{
+  "cells": [
+    {
+      "cell_id": "policy-medium-load-0p25-threads-4",
+      "collector_end_lag_from_guidellm_s": 0.2994239330291748,
+      "collectors_prepared": true,
+      "duration_s": 1800.0000945790016,
+      "duration_seconds": 1800.0,
+      "ebpf": {
+        "boundary": "one-second monotonic buckets whose centers fall inside the measured policy window; raw output retains the pre-arrival attachment period",
+        "prelude_seconds": 91.18270185499568,
+        "probe": "/home/randomwish/dev/vllm-exploration/experiments/laptop_slo_energy/probes/runqlat.bt",
+        "returncode": 0,
+        "runqlat_us": {
+          "ge_100us_fraction": 0.01456355003652301,
+          "ge_100us_samples": 319,
+          "ge_10ms_fraction": 0.0,
+          "ge_10ms_samples": 0,
+          "ge_1ms_fraction": 0.00022826880934989044,
+          "ge_1ms_samples": 5,
+          "max_us": 1690,
+          "mean_us": 17.636093864134406,
+          "mode": "one-second-aggregates",
+          "samples": 21904,
+          "selected_1s_buckets": 1800
+        },
+        "samples": 21904,
+        "selected_time_buckets": 1800,
+        "started": true,
+        "started_bpf_clock_s": 115633.915192521,
+        "started_unix_s": 1788260908.432287,
+        "total_samples_including_prelude": 25952,
+        "valid": true
+      },
+      "efficiency": {
+        "joules_per_successful_request": 555.7585,
+        "output_tokens_per_joule": 0.23121553696434693,
+        "slo_good_output_tokens_per_joule": 0.0
+      },
+      "energy": {
+        "boundary": "local package for the configured benchmark window, aligned to the first post-setup llama-server request using pre-armed, disabled perf counters; includes model server and active load generator, excludes tokenizer and request-loader setup",
+        "events": {
+          "power/energy-pkg/": {
+            "joules": 11115.17,
+            "raw_value": "11115.17",
+            "unit": "Joules"
+          },
+          "power_core/energy-core/": {
+            "joules": 902.1,
+            "raw_value": "902.10",
+            "unit": "Joules"
+          }
+        },
+        "primary_event": "power/energy-pkg/",
+        "source": "linux-perf-system-wide",
+        "total_energy_j": 11115.17,
+        "valid": true,
+        "window_seconds": 1800.0000945790016
+      },
+      "finished_bpf_clock_s": 117525.097989257,
+      "finished_monotonic_s": 47782.227035739,
+      "finished_unix_s": 1788262799.6150897,
+      "guide": {
+        "admitted_requests": 20,
+        "completed_requests_per_second": 0.011111111111111112,
+        "errored_requests": 0,
+        "guidellm_schema_version": 2.0,
+        "guidellm_version": "0.7.2",
+        "incomplete_requests": 0,
+        "measurement_duration_s": 1800.0,
+        "measurement_end_unix_s": 1788262799.3156657,
+        "measurement_start_unix_s": 1788260999.3156657,
+        "output_tokens_successful": 2570.0,
+        "p50_itl_ms": 87.83457800745964,
+        "p50_ttft_ms": 9324.459552764893,
+        "p95_e2e_ms": 21870.35846710205,
+        "p95_itl_ms": 94.13942135870457,
+        "p95_ttft_ms": 9941.159009933472,
+        "p99_e2e_ms": 22023.29111099243,
+        "p99_itl_ms": 95.72844430217593,
+        "p99_ttft_ms": 9972.906827926636,
+        "success_rate": 1.0,
+        "successful_requests": 20
+      },
+      "guidellm_finished_unix_s": 1788262799.3156657,
+      "guidellm_started_unix_s": 1788260999.3156657,
+      "host": {
+        "interval_seconds": 0.5,
+        "sample_count": 3761,
+        "valid": true,
+        "window_sample_count": 3579
+      },
+      "load_fraction": 0.25,
+      "marker": "GuideLLM Setup complete, starting benchmarks",
+      "marker_detected": true,
+      "offered_rate_requests_s": 0.011111111111111112,
+      "phase": "policy",
+      "profile": "constant",
+      "request_marker": "llama-server processing task",
+      "request_marker_detected": true,
+      "seed": 42,
+      "server_trigger_lag_from_guidellm_s": 0.2993292808532715,
+      "slo": {
+        "cell_passes_slo": false,
+        "checks": {
+          "p95_itl_ms": true,
+          "p95_ttft_ms": false,
+          "p99_e2e_ms": true,
+          "success_rate": true
+        },
+        "policy_label": "medium",
+        "thresholds": {
+          "p95_itl_ms": 120.0,
+          "p95_ttft_ms": 8000.0,
+          "p99_e2e_ms": 30000.0,
+          "success_rate_min": 0.95
+        }
+      },
+      "started_bpf_clock_s": 115725.097894376,
+      "started_monotonic_s": 45982.22694116,
+      "started_unix_s": 1788260999.614995,
+      "suspend_gap_s": 7.317430572584271e-08,
+      "target_duration_s": 1800.0,
+      "threads": 4,
+      "treatment": "threads-4",
+      "validity": {
+        "checks": {
+          "benchmark_marker_detected": true,
+          "collectors_prepared_before_request": true,
+          "ebpf_valid": true,
+          "energy_valid": true,
+          "guidellm_exit_zero": true,
+          "guidellm_report_parsed": true,
+          "host_samples_present": true,
+          "measurement_window_duration_valid": true,
+          "minimum_successful_requests": true,
+          "server_request_marker_detected": true,
+          "suspend_gap_within_limit": true
+        },
+        "execution_valid": true,
+        "guidellm_error": null,
+        "sample_sufficient": true,
+        "valid": true
+      },
+      "wall_duration_s": 1800.000094652176,
+      "workload": "medium"
+    },
+    {
+      "cell_id": "policy-medium-load-0p25-threads-8",
+      "collector_end_lag_from_guidellm_s": 0.32405519485473633,
+      "collectors_prepared": true,
+      "duration_s": 1800.0001535580013,
+      "duration_seconds": 1800.0,
+      "ebpf": {
+        "boundary": "one-second monotonic buckets whose centers fall inside the measured policy window; raw output retains the pre-arrival attachment period",
+        "prelude_seconds": 91.20058535999851,
+        "probe": "/home/randomwish/dev/vllm-exploration/experiments/laptop_slo_energy/probes/runqlat.bt",
+        "returncode": 0,
+        "runqlat_us": {
+          "ge_100us_fraction": 0.0179883455789207,
+          "ge_100us_samples": 426,
+          "ge_10ms_fraction": 0.0,
+          "ge_10ms_samples": 0,
+          "ge_1ms_fraction": 0.0007600709399543957,
+          "ge_1ms_samples": 18,
+          "max_us": 2998,
+          "mean_us": 18.285153280972892,
+          "mode": "one-second-aggregates",
+          "samples": 23682,
+          "selected_1s_buckets": 1800
+        },
+        "samples": 23682,
+        "selected_time_buckets": 1800,
+        "started": true,
+        "started_bpf_clock_s": 117540.377189128,
+        "started_unix_s": 1788262814.8942835,
+        "total_samples_including_prelude": 27813,
+        "valid": true
+      },
+      "efficiency": {
+        "joules_per_successful_request": 643.5840000000001,
+        "output_tokens_per_joule": 0.19966313643595862,
+        "slo_good_output_tokens_per_joule": 0.0
+      },
+      "energy": {
+        "boundary": "local package for the configured benchmark window, aligned to the first post-setup llama-server request using pre-armed, disabled perf counters; includes model server and active load generator, excludes tokenizer and request-loader setup",
+        "events": {
+          "power/energy-pkg/": {
+            "joules": 12871.68,
+            "raw_value": "12871.68",
+            "unit": "Joules"
+          },
+          "power_core/energy-core/": {
+            "joules": 1648.46,
+            "raw_value": "1648.46",
+            "unit": "Joules"
+          }
+        },
+        "primary_event": "power/energy-pkg/",
+        "source": "linux-perf-system-wide",
+        "total_energy_j": 12871.68,
+        "valid": true,
+        "window_seconds": 1800.0001535580013
+      },
+      "finished_bpf_clock_s": 119431.577933175,
+      "finished_monotonic_s": 49688.706974969,
+      "finished_unix_s": 1788264706.0950284,
+      "guide": {
+        "admitted_requests": 20,
+        "completed_requests_per_second": 0.011111111111111112,
+        "errored_requests": 0,
+        "guidellm_schema_version": 2.0,
+        "guidellm_version": "0.7.2",
+        "incomplete_requests": 0,
+        "measurement_duration_s": 1800.0,
+        "measurement_end_unix_s": 1788264705.7709732,
+        "measurement_start_unix_s": 1788262905.7709732,
+        "output_tokens_successful": 2570.0,
+        "p50_itl_ms": 95.28527036309242,
+        "p50_ttft_ms": 10237.978219985962,
+        "p95_e2e_ms": 24430.99594116211,
+        "p95_itl_ms": 105.62692396342754,
+        "p95_ttft_ms": 11090.288400650024,
+        "p99_e2e_ms": 24654.79826927185,
+        "p99_itl_ms": 105.62692396342754,
+        "p99_ttft_ms": 11133.852005004883,
+        "success_rate": 1.0,
+        "successful_requests": 20
+      },
+      "guidellm_finished_unix_s": 1788264705.7709732,
+      "guidellm_started_unix_s": 1788262905.7709732,
+      "host": {
+        "interval_seconds": 0.5,
+        "sample_count": 3761,
+        "valid": true,
+        "window_sample_count": 3579
+      },
+      "load_fraction": 0.25,
+      "marker": "GuideLLM Setup complete, starting benchmarks",
+      "marker_detected": true,
+      "offered_rate_requests_s": 0.011111111111111112,
+      "phase": "policy",
+      "profile": "constant",
+      "request_marker": "llama-server processing task",
+      "request_marker_detected": true,
+      "seed": 42,
+      "server_trigger_lag_from_guidellm_s": 0.323901891708374,
+      "slo": {
+        "cell_passes_slo": false,
+        "checks": {
+          "p95_itl_ms": true,
+          "p95_ttft_ms": false,
+          "p99_e2e_ms": true,
+          "success_rate": true
+        },
+        "policy_label": "medium",
+        "thresholds": {
+          "p95_itl_ms": 120.0,
+          "p95_ttft_ms": 8000.0,
+          "p99_e2e_ms": 30000.0,
+          "success_rate_min": 0.95
+        }
+      },
+      "started_bpf_clock_s": 117631.577774488,
+      "started_monotonic_s": 47888.706821411,
+      "started_unix_s": 1788262906.094875,
+      "suspend_gap_s": 0.0,
+      "target_duration_s": 1800.0,
+      "threads": 8,
+      "treatment": "threads-8",
+      "validity": {
+        "checks": {
+          "benchmark_marker_detected": true,
+          "collectors_prepared_before_request": true,
+          "ebpf_valid": true,
+          "energy_valid": true,
+          "guidellm_exit_zero": true,
+          "guidellm_report_parsed": true,
+          "host_samples_present": true,
+          "measurement_window_duration_valid": true,
+          "minimum_successful_requests": true,
+          "server_request_marker_detected": true,
+          "suspend_gap_within_limit": true
+        },
+        "execution_valid": true,
+        "guidellm_error": null,
+        "sample_sufficient": true,
+        "valid": true
+      },
+      "wall_duration_s": 1800.0001533031464,
+      "workload": "medium"
+    }
+  ],
+  "evidence_valid": true,
+  "execution_evidence_valid": true,
+  "policy_status": "exploratory-medium-constant-frontier-not-an-sla",
+  "single_seed_exploratory": true,
+  "slo_qualified_winners": []
+}

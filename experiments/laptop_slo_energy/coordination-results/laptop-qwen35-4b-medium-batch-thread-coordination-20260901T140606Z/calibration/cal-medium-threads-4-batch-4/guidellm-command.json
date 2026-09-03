@@ -1,0 +1,23 @@
+{
+  "argv": [
+    "/home/randomwish/dev/vllm-exploration/experiments/laptop_slo_energy/.venv/bin/guidellm",
+    "run",
+    "--backend",
+    "kind=openai_http,target=http://127.0.0.1:18085,request_format=/v1/chat/completions",
+    "--data",
+    "kind=synthetic_text,prompt_tokens=2048,prompt_tokens_stdev=1,output_tokens=128,output_tokens_stdev=1",
+    "--tokenizer",
+    "kind=huggingface_auto,model=Qwen/Qwen3.5-4B",
+    "--profile",
+    "kind=synchronous",
+    "--constraint",
+    "kind=max_duration,seconds=180",
+    "--seed",
+    "kind=static,value=42",
+    "--output",
+    "kind=json,path=/home/randomwish/dev/vllm-exploration/experiments/laptop_slo_energy/coordination-results/laptop-qwen35-4b-medium-batch-thread-coordination-20260901T140606Z/calibration/cal-medium-threads-4-batch-4/guidellm.json",
+    "--output",
+    "kind=csv,path=/home/randomwish/dev/vllm-exploration/experiments/laptop_slo_energy/coordination-results/laptop-qwen35-4b-medium-batch-thread-coordination-20260901T140606Z/calibration/cal-medium-threads-4-batch-4/guidellm.csv",
+    "--disable-console-interactive"
+  ]
+}

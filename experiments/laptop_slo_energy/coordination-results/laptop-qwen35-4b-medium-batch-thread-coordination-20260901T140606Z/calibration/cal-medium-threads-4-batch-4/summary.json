@@ -1,0 +1,22 @@
+{
+  "admitted_requests": 8,
+  "completed_requests_per_second": 0.03888888888888889,
+  "errored_requests": 0,
+  "guidellm_schema_version": 2.0,
+  "guidellm_version": "0.7.2",
+  "incomplete_requests": 0,
+  "measurement_duration_s": 180.0,
+  "measurement_end_unix_s": 1788271761.8685317,
+  "measurement_start_unix_s": 1788271581.8685317,
+  "output_tokens_successful": 1027.0,
+  "p50_itl_ms": 95.54308094084263,
+  "p50_ttft_ms": 10388.068437576294,
+  "p95_e2e_ms": 23470.295667648315,
+  "p95_itl_ms": 98.40287640690804,
+  "p95_ttft_ms": 11483.671426773071,
+  "p99_e2e_ms": 23470.295667648315,
+  "p99_itl_ms": 98.40287640690804,
+  "p99_ttft_ms": 11483.671426773071,
+  "success_rate": 1.0,
+  "successful_requests": 8
+}

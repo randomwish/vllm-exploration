@@ -1,0 +1,110 @@
+✔ OpenAIHTTPBackend backend validated with model /home/randomwish/models/Qwen3.5-4B-Q4_K_M.gguf
+  {'kind': 'openai_http', 'target': 'http://127.0.0.1:18085', 'model':                                    
+  '/home/randomwish/models/Qwen3.5-4B-Q4_K_M.gguf', 'request_format': '/v1/chat/completions', 'api_key':  
+  None, 'api_routes': {'/health': 'health', '/v1/models': 'v1/models', '/v1/completions':                 
+  'v1/completions', '/v1/chat/completions': 'v1/chat/completions', '/v1/embeddings': 'v1/embeddings',     
+  '/v1/responses': 'v1/responses', '/v1/audio/transcriptions': 'v1/audio/transcriptions',                 
+  '/v1/audio/translations': 'v1/audio/translations', '/pooling': 'pooling'}, 'timeout': None,             
+  'timeout_connect': 5.0, 'http2': True, 'follow_redirects': True, 'verify': False, 'validate_backend':   
+  True, 'stream': True, 'extras': None, 'max_tokens': None, 'server_history': False,                      
+  'tool_call_missing_behavior': 'error_stop', 'multiturn_reasoning': False}                               
+✔ Tokenizer resolved, Using tokenizer 'Qwen/Qwen3.5-4B' from arguments
+  {'kind': 'huggingface_auto', 'model': 'Qwen/Qwen3.5-4B', 'load_kwargs': {}}                             
+✔ 1 datasets resolved
+  [{'kind': 'synthetic_text', 'load_kwargs': {}, 'prompt_tokens': 2048, 'prompt_tokens_stdev': 1,         
+  'prompt_tokens_min': None, 'prompt_tokens_max': None, 'output_tokens': 128, 'output_tokens_stdev': 1,   
+  'output_tokens_min': None, 'output_tokens_max': None, 'delay': None, 'delay_stdev': None, 'delay_min':  
+  None, 'delay_max': None, 'turns': 1, 'tool_call_turns': [], 'tools': None, 'tool_response_tokens': None,
+  'tool_response_tokens_stdev': None, 'tool_response_tokens_min': None, 'tool_response_tokens_max': None, 
+  'server_tool_call_turns': [], 'prefix_buckets': None}]                                                  
+✔ 2 preprocessors resolved
+  [{'kind': 'generative_column_mapper', 'column_mappings': None}, {'kind': 'encode_media', 'audio_kwargs':
+  {}, 'image_kwargs': {}, 'video_kwargs': {}}]                                                            
+✔ Finalizer resolved
+  {'kind': 'generative', 'tool_call_mode': 'client'}                                                      
+✔ Request loader resolved with inf unique requests
+  {'kind': 'pytorch', 'samples': -1, 'shuffle': False, 'num_workers': 1}                                  
+✔ AsyncProfile profile resolved
+  {'kind': 'constant', 'rampup_duration': 0.0, 'warmup': {'percent': None, 'value': None, 'mode':         
+  'prefer_duration'}, 'cooldown': {'percent': None, 'value': None, 'mode': 'prefer_duration'}, 'rate':    
+  [0.0097222222], 'max_concurrency': 8}                                                                   
+✔ Output formats resolved
+  [{'kind': 'json', 'path':                                                                               
+  '/home/randomwish/dev/vllm-exploration/experiments/laptop_slo_energy/coordination-results/laptop-qwen35-
+  4b-medium-batch-thread-coordination-20260901T140606Z/policy/policy-medium-load-0p25-threads-4-batch-2/gu
+  idellm.json'}, {'kind': 'csv', 'path':                                                                  
+  '/home/randomwish/dev/vllm-exploration/experiments/laptop_slo_energy/coordination-results/laptop-qwen35-
+  4b-medium-batch-thread-coordination-20260901T140606Z/policy/policy-medium-load-0p25-threads-4-batch-2/gu
+  idellm.csv'}]                                                                                           
+✔ Setup complete, starting benchmarks...
+
+
+
+
+
+ℹ Run Summary Info
+|===========|==========|==========|========|======|======|========|=====|=====|=======|=====|=====|
+| Benchmark | Timings                                ||||| Input Tokens     ||| Output Tokens   |||
+| Strategy  | Start    | End      | Dur    | Warm | Cool | Comp   | Inc | Err | Comp  | Inc | Err |
+|           |          |          | Sec    | Sec  | Sec  | Tot    | Tot | Tot | Tot   | Tot | Tot |
+|-----------|----------|----------|--------|------|------|--------|-----|-----|-------|-----|-----|
+| constant  | 22:34:02 | 22:54:37 | 1235.0 | 0.0  | 0.0  | 4115.0 | 0.0 | 0.0 | 256.0 | 0.0 | 0.0 |
+|===========|==========|==========|========|======|======|========|=====|=====|=======|=====|=====|
+
+
+ℹ Text Metrics Statistics (Completed Requests)
+|===========|========|========|======|======|========|========|======|======|=========|=========|======|======|
+| Benchmark | Input Tokens               |||| Input Words                |||| Input Characters             ||||
+| Strategy  | Per Request    || Per Second || Per Request    || Per Second || Per Request      || Per Second ||
+|           | Mdn    | p95    | Mdn  | Mean | Mdn    | p95    | Mdn  | Mean | Mdn     | p95     | Mdn  | Mean |
+|-----------|--------|--------|------|------|--------|--------|------|------|---------|---------|------|------|
+| constant  | 2057.0 | 2058.0 | 1.1  | 1.1  | 1599.0 | 1633.0 | 0.9  | 0.8  | 10715.0 | 10900.0 | 5.7  | 5.7  |
+|===========|========|========|======|======|========|========|======|======|=========|=========|======|======|
+| Benchmark | Output Tokens              |||| Output Words               |||| Output Characters            ||||
+| Strategy  | Per Request    || Per Second || Per Request    || Per Second || Per Request      || Per Second ||
+|           | Mdn    | p95    | Mdn  | Mean | Mdn    | p95    | Mdn  | Mean | Mdn     | p95     | Mdn  | Mean |
+|-----------|--------|--------|------|------|--------|--------|------|------|---------|---------|------|------|
+| constant  | 128.0  | 128.0  | 0.1  | 0.1  | 0.0    | 0.0    | 0.0  | 0.0  | 0.0     | 0.0     | 0.0  | 0.0  |
+|===========|========|========|======|======|========|========|======|======|=========|=========|======|======|
+
+
+ℹ Request Token Statistics (Completed Requests)
+|===========|========|========|=======|=======|========|========|=======|=======|=========|========|
+| Benchmark | Input Tok      || Output Tok   || Total Tok      || Stream Iter  || Output Tok      ||
+| Strategy  | Per Req        || Per Req      || Per Req        || Per Req      || Per Stream Iter ||
+|           | Mdn    | p95    | Mdn   | p95   | Mdn    | p95    | Mdn   | p95   | Mdn     | p95    |
+|-----------|--------|--------|-------|-------|--------|--------|-------|-------|---------|--------|
+| constant  | 2057.0 | 2058.0 | 128.0 | 128.0 | 2185.0 | 2186.0 | 132.0 | 132.0 | 1.0     | 1.0    |
+|===========|========|========|=======|=======|========|========|=======|=======|=========|========|
+
+
+ℹ Request Latency Statistics (Completed Requests)
+|===========|========|=========|========|========|=====|=====|======|=========|=======|=========|
+| Benchmark | Request Latency || TTFT           || TTFOT    || ITL           || TPOT           ||
+| Strategy  | Sec             || ms             || ms       || ms            || ms             ||
+|           | Mdn    | p95     | Mdn    | p95    | Mdn | p95 | Mdn  | p95     | Mdn   | p95     |
+|-----------|--------|---------|--------|--------|-----|-----|------|---------|-------|---------|
+| constant  | 20.5   | 3733.0  | 9120.7 | 9518.3 | 0.0 | 0.0 | 86.6 | 29322.1 | 160.3 | 29164.3 |
+|===========|========|=========|========|========|=====|=====|======|=========|=======|=========|
+
+
+ℹ Server Throughput Statistics (All Requests)
+|===========|=======|======|=========|==============|===============|==============|
+| Benchmark | Requests             ||| Input Tokens | Output Tokens | Total Tokens |
+| Strategy  | Concurrency || Per Sec | Per Sec      | Per Sec       | Per Sec      |
+|           | Mdn   | Mean | Mean                                               ||||
+|-----------|-------|------|---------|--------------|---------------|--------------|
+| constant  | 1.0   | 0.9  | 0.0     | 40.2         | 0.1           | 1.1          |
+|===========|=======|======|=========|==============|===============|==============|
+
+
+
+✔ Benchmarking complete, generated 1 benchmark(s)
+…   json    : 
+/home/randomwish/dev/vllm-exploration/experiments/laptop_slo_energy/coordination-results/laptop-qwen35-4b-
+medium-batch-thread-coordination-20260901T140606Z/policy/policy-medium-load-0p25-threads-4-batch-2/guidell
+m.json
+…   csv     : 
+/home/randomwish/dev/vllm-exploration/experiments/laptop_slo_energy/coordination-results/laptop-qwen35-4b-
+medium-batch-thread-coordination-20260901T140606Z/policy/policy-medium-load-0p25-threads-4-batch-2/guidell
+m.csv
